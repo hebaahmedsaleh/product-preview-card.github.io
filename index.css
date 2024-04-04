@@ -1,94 +1,173 @@
 :root {
   --White: hsl(0, 0%, 100%);
-  --LightGrey: hsl(212, 45%, 89%);
-  --GrayishBlue: hsl(220, 15%, 55%);
   --Black: hsl(0, 0%, 7%);
-  --DarkBlue:  hsl(218, 44%, 22%);
-
+  --DarkCyan: hsl(158, 36%, 37%);
+  --Cream: hsl(30, 38%, 92%);
+  --DarkBlue: hsl(212, 21%, 14%);
+  --DarkGrayishBlue: hsl(228, 12%, 48%);
 }
 
 body,
 p,
 h1,
 figure,
-section {
+section,
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 body {
-  background-color: var(--LightGrey);
+  background-color: var(--Cream);
   width: 100%;
   display: flex;
-  align-items: center;
   flex-direction: column;
   position: relative;
   height: 100vh;
   justify-content: center;
-  font-family: "Outfit", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
-  font-style: 0.94rem;
+  font-style: 0.875rem;
 }
 
-#container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--White);
+.container {
+  background-color: var(--Cream);
   color: var(--Black);
-  width: 20%;
-  min-width: 20rem;
-  border-radius: 1rem;
-  padding: 1.5rem 1rem 2.75rem;
   border: 1px solid transparent;
-  box-sizing: border-box;
+  padding: 1.5rem 1rem 3rem;
+  height: 100%;
 }
 
-@media only screen and (max-width: 600px) {
-  #container {
-    width: 70%;
-    min-width: initial;
-    margin: 0 1rem;
-  }
-
-  .qr-photo-container {
-    text-align: center;
-    width: 18rem;
-    height: 18rem;
-  }
-
-  .qr-code {
-    width: 90%;
-  }
+.product-details-container {
+  background-color: var(--White);
+  padding: 1rem;
+  margin-top: -0.1875rem;
 }
 
-.qr-photo-container {
-  text-align: center;
-  width: 18rem;
-  height: 18rem;
-}
-
-.qr-code {
-  border-radius: 0.5rem;
+.product-code {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
   width: 100%;
 }
 
+.product-type {
+  color: var(--DarkGrayishBlue);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
 
 .main-content {
-  margin: 1.5rem 0 .25rem 1.5rem;
+  margin: 1.5rem 0 0.25rem 1.5rem;
   padding: 0 2rem 0 0.5rem;
 }
 
-.note-text {
-  font-size: 0.75rem;
+.description {
+  font-size: 0.9rem;
   font-weight: normal;
-  color: var(--GrayishBlue);
+  color: var(--DarkGrayishBlue);
+  margin-bottom: 1rem;
 }
 
-.default-text {
-  color: var(--DarkBlue);
-  font-size: 1rem;
+.title {
+  color: var(--Black);
+  font-size: 2em;
   font-weight: bold;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
+.price {
+  color: var(--DarkCyan);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.price-tag {
+  color: var(--DarkGrayishBlue);
+  font-size: 0.75rem;
+  margin-inline-start: 1rem;
+}
+
+.cart-btn {
+  background-color: var(--DarkCyan);
+  padding: 0.75rem;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  color: var(--White);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-weight: 700;
+}
+
+.cart-icon {
+  margin-inline-end: 0.5rem;
+}
+
+.fraunces-font {
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "SOFT" 0, "WONK" 0;
+}
+
+.montserrat-normal-font {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.montserrat-bold-font {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@media only screen and (min-width: 375px) {
+  body {
+    display: flex;
+    align-items: center;
+  }
+
+  .container {
+    display: flex;
+    width: 42%;
+    margin: 0;
+    height: 28rem;
+    padding: 0;
+  }
+
+  .product-photo-container {
+    flex: 1;
+    height: 100%;
+  }
+
+  .product-code {
+    border-top-right-radius: 0;
+    height: 100%;
+  }
+
+  .product-details-container {
+    flex: 1;
+    border-top-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    padding: 2rem;
+  }
+
+  .product-type {
+    margin-bottom: 2rem;
+  }
+  .title {
+    margin-bottom: 2rem;
+  }
+  .description {
+    margin-bottom: 1.5rem;
+  }
+  .price {
+    margin-bottom: 1.5rem;
+  }
+}
